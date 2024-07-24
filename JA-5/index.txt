@@ -1,0 +1,434 @@
+1.what is javascript?
+Ans:Javascript is high level intrepreted programming language.
+It is executed at Run time.
+It is dynamic in nature .javascript is  single threaded  synchronous  language.
+----javascript History-----
+It is invented by programmer by name Brendon Eich in the year 1995 while he was  working in NETscape firm.he was chief technical officer
+in morzilla corporation and later jhe resigned ther and became CEO of brave software.
+----overview------
+JS is a multi-use , dynamic language with types and operators, standard built-in objects, and methods.
+The core language of JavaScript is standardized by the ECMA TC39 committee as a language named ECMAScript.
+ECMAScript 14 is the current version been used in JS.But we genrally use ES6 or ES7 in our daily  developing Task.JS contains dataypes, loops and functions,classes but additionally we have map filter and reduce ,array ,objects are been introduced to make developer life easier.
+---primary usecases-----------
+The primary usecases of JS:
+1. It is used to create web applications on web browsers like SPA(single page applications),responsive web designing ,games etc,
+2.It is also used in embedded hardware controls.
+3.It is used in server side scripting intrgerated with different tools.
+4.IT will help to cope up the whole doc during reloading and breakdown of the entire webpage.
+_---differences---
+1.Js code is executed in runtime while others are executed in compile time
+2.JS has wide range of frameworks such as react and angular js having wide range of libaries appliacble in implementing complex functions and rendering the accurate results.
+
+2.What are the data types in JavaScript?
+Ans:A data type is an attribute associated with a piece of data that tells a computer system how to interpret its value.
+JS dataypes are classified into two types primitive and non-primitive types
+1.primitive dattaypes are further dicvided into Number,string,null undefined,a nd symbol.
+2. non primitive datatype includes object,array and function.
+
+primitive datatypes acn be replace but it cannot be altered directly
+
+i.Number:It is positive integer we can provide as a value to variable for storing it.
+ ex:var a=34 
+
+ii.String:It i a set of characters provided in form of words or sentences
+
+ex: let str="I love my India"
+
+iii.null: It is datatype where we are implicitly(user intentionally) or explicitly  not providing any value
+ ex:const a=null
+
+iv.Undefined:It is datatype which is declared but not instialized by user 
+ ex: const person
+
+v.Boolean : It is datatype  which is use in logical operations by giving two outcomes like true or false.
+ex:var isstudent=true
+
+vi. BigInt:It is a datatype which is used to specify very large integers .
+ex: const marks=BigInt(1267498900900)
+
+vii.Symbol: It is unique identifier that can be used  add unique property keys to an object.
+ex: let region=Symbol("Eifil tower")
+
+Non- promitive Data types:It is the datatypes which are mutable after declaring and intialising them.It is derived from primitive datatypes called derived data types  or reference datatypes.It includes array,object,regular expressions.
+
+i.Array: It is set of heterogenous datatypes which are stored under single variable name in the meemory location.
+
+ex:let arr=[1,2.3,"hello",true]
+
+ii.object: It is used to store  various key collections and more complex entities.It is use to store property in key value pair.It is building blocks of JS.
+
+const person={
+    name:"James",
+    age:40,
+    isstudent:true,
+    email:"example123@gmail.com"
+} 
+
+3.What is the DOM?
+
+--Definition---
+Ans:It is the arrangement of different web elements inside the HTML doc in tree like fashion .That comprise the structure and content of a document on the web.
+
+javascript will interact with DOM using accesssing and modifying methods with inbuilt keywords such as
+
+acessing methods:
+a)document.getElementsByTagName()
+b)document.getElementsByClassName()
+c)document.getElementById()
+d)document.querySelector()
+e)document.querySelectorAll()
+
+Modifying keywords:
+a)document.element.innerHTML
+b)document.element.innerText
+c)document.element.TextContent
+
+
+for ex: <h1 id="heading"> This DOM</h1>
+
+<script>
+const heading=document.getElementById("heading")
+heading.innerText=" DOM Manipulation"
+</script>
+
+4.Explain the difference between null and undefined.?
+Ans:
+Null                           |                 undefined
+1.null is a datatype.which is                    1.Undefined is a datatype 
+not defined intentionally.                         which is declared but       
+                                                   not intialised.
+                                                   ex:var a
+
+2.it is used in the case where                  2,3.It is used in the case wh  
+variable should not conTin any value           ere Variable and it is declared 
+ ex: var a=null                                 but not provided any value
+                                                and in object property is declared but not provided any value 
+3.it is used in the object                      ex: var employee={  
+where if u want to make any property                 name:"ahmad",
+value as null                                        company:true,
+ex:var a={name:"james",age:40}                       empcode:""}
+when u make property null                      console.log(employee.empcode)
+a.name=null
+console.log(a)
+
+4. It is used in function to return a null    4.It is used in function which is
+value based on a condition.                    not defined  but not return any 
+isstudent='studentName'                        value
+ex: function findperson(person){              ex:function func {var a=21}
+    if(person==studentList){                  console.log(func())
+        return true
+    }
+    else{
+        return null
+    }
+}
+
+
+5. What is the difference between let, const, and var?
+
+Ans:
+a.Var is the most ancient data variable is been used  to store a value in JS.It can be redeclared and reinitialised.That is the one of disadvantage of it.
+ex:var a=10
+var a=11
+Scope:
+
+1.if it is defined inside a  global scope then it can be acessed in function scope or block scope
+
+var a=4
+
+function func(a){
+console.log(a)//4
+
+}
+func()//global scope
+2. if it is defined inside a block scope or function scope then it accessible only inside it.
+{
+var b=5
+console.log(b)//5
+console.log(a)//undefined
+}
+  
+console.log(b)//error not accessible
+
+
+hoisting  is common error caused in var when it is called without declaration and intialisation of it.
+
+ex:console.log(a)
+var a=5//global scope
+
+
+b.let is the keyword which is introduced in ES6 .It can be redeclared and but cannot be reinitialised
+
+ex:let a=10
+   a=10 
+
+
+   scope: generally let is block scoped.it is  accessible anywhere when it is defined in the global scope
+
+   let a=10
+
+   function func(){
+    console.log(a)//10
+   }
+  
+   when it is block scoped or function scoped then it is accessible within that function or block
+
+   {
+    let b=34
+    console.log(b)//34
+   }
+   console.log(b)//error not accesible
+
+  
+   (function(data){
+    let a=23
+    console.log(data*a)
+   })(12)
+
+   console.log(a*a)//error not accessible
+
+temporal dead zone: if let is accessed before it is declared and intialised then it is in temporal dead zone state
+Ex:console.log(a)//TDZ
+let a=45
+
+c.Const is a keyword which is introduced in ES6.It can be redeclared and reintialised.
+ex:const b=34
+console.log(b)
+
+scope:generally const is block scoped.but if it is defined in global context .It can be accessible  anywhere in the program.
+
+const b=7
+const c=(data)=>{
+   
+    const d=Math.random()
+
+    console.log(d)
+    console.log(d*data+b)
+}
+c(data)
+ 
+ If it is  in block scope or function scope.It is accessible only inside it.if it is accessed outside u will get an TDZ condition  as an error
+
+{
+    const b=6
+    console.log(b)
+}
+
+console.log(b)//block scope
+
+temporal dead zone: if let is accessed before it is declared and intialised then it is in temporal dead zone state
+Ex:console.log(b)//TDZ
+let b=23
+
+6.What is hoisting in JavaScript?
+Ans:hoisting is a process where variables and functions declared will move to the top of compilation phase wrt scope.
+
+i)var-hoisting in var is the variable is called befored it is declared and defined
+ 
+console.log(a)//hoisting
+
+var data=(par)=>{
+console.log(a*par)//hoisting error
+}
+data(32)
+
+var a=20
+ 
+ ii)let -hoisting in let is the variable is called befored it is declared and initialised
+but main part in terms of nomenclature it is defined as TDZ(temporal dead zone)
+let cannot be redeclared and can be reinitialised
+console.log(b)//TDZ
+
+let avg=(par){
+  
+    console.log(b+par/2)
+}
+avg(34)
+let b=30
+
+iii)const -hoisting in const is the variable is called befored it is declared and initialised
+but main part in terms of nomenclature it is defined as TDZ(temporal dead zone)
+const cannot be redeclared and reinitialised
+
+console.log(arr)//TDZ
+
+const mininum=(par){
+    console.log(min(...arr))
+}
+const arr=[3,4,5]
+minimum(arr)
+
+7.What is the difference between == (abstract equality)  and === (strict equality)?
+
+Ans:
+--------Definition----------
+abstract equality means it compares the values between two objects and gives you 
+final o/p as true or false
+
+strict equality means it compares both datatypes and values between two objects
+ finally gives you boolean o/p true or false.
+
+
+ ------comparision using examples along with comparision operator ---------
+
+abstract equality compares the values not the datatypes
+
+ex:let a=true
+   let b="true"
+   console.log(a==b)//false
+   let c=5
+   let d="5"
+   console.log(a==b)//true
+
+strict equality compares the datatypes and values 
+
+ex: let a=10
+    const b='10'
+
+    console.log(a===b)//false
+    let a=true
+   let b="true"
+   console.log(a===b)//false
+
+
+
+8. explain the difference between foreach,map,filter and reduce?
+-------Foreach-----------------------
+ans:a) Foreach method is generally applied on arrays to navigate inside it and perform certain 
+cslculation for desired output.
+ex:
+let arr1=[2,3,4,5]
+
+const result=arr1.foreach((item)=>item*2)
+console.log(result)
+
+Imp Note: ***foreach and map are used for same iteration but only differnce is 
+foreach will not return the value it only iterates but map will iterate and returns a value**
+--------map--------------------------
+b)map method is generally  applied on a arrays to navigate and iterate through them
+to manipulate and perform certain task for desired output
+ex:
+let arr2=[4,5,6,7,8]
+
+const result1=arr2.map((item)=>item/2)
+console.log(result1)
+--------------filter------------------
+c)filter method is generally applied on arrays  to navigate
+through the  array and filter elements along with given condition .
+ex:
+let arr3=[5,7,8,3]
+
+const result2=arr3.filter(ele=>ele%2==0?true:false)
+if(true){
+    console.log(result2)
+}
+else{
+    console.log("not even")
+}
+-------------------reduce---------------
+d)reduce is a method to actually navigate through an array and apply two things on array like 
+accumulator and current element
+
+accumulator will accumulate the previous value and current will accumulate the present succeeding value
+so finally after performing opeeration using these things we get an single value as an output
+
+ex:let arr4=[34,5,6,78,89]
+
+const arr5=arr4.reduce((acc,curr)=>console.log(acc+curr))
+console.log(arr5)
+
+
+9. Explain about call, apply, and bind methods.
+ans:a)call is a method applied on function to invoke it by calling an object using this 
+keyword to get desired output.
+
+ex: empdata1={
+    name:"harry",
+    role:"dev",
+    salary:200000
+}
+ empdata2={
+    name:"julie",
+    role:"dev",
+    salary:200000
+}
+
+const data1=(country,empcode)=>{
+    return this.name+"with employee code"+this.empcode"+"from"+country
+}
+
+console.log(data1.call(empdata1,Australia,1245))
+
+const data2=(country,empcode)=>{
+    return this.name+"with role"+this.role"+"from"+
+}
+
+console.log(data1.call(empdata1,Australia,1245))
+
+b)apply is method to invoke the function using this keyword to access an object.but here instead of single objects we pass
+array as an object inside the function to get desired output
+
+ex: const data={
+    carName:"toyota",
+    ModelNo:"suv250".
+    price:"100M$"
+}
+ function cardetails(speed){
+    console.log(this.carName+"with Model"+ModelNo+"has price of"+this.price+"can be driven with various speed range"+string(speed)+"kph")
+ }
+
+ cardetails.apply(data,[100,150,200])
+
+ c)bind is a method is used to bind any two objects or object witha function in order to get desired output using this keyword.
+
+ ex: const birthdayBoy={
+    name:" Alex flexor"
+    age:"32"
+ }
+
+ let celebration={
+    wishes:'happy Birthday"
+    message:function conveywish(){
+        return this.wishes+ "to"+this.name+"for celebrating his"+this.age+"birthday"
+    }}
+  const desiredoutput=celebration.message.bind(birthdayBoy)
+  console.log(desiredoutput())
+
+  Note: please consider this entire file as digitally handwritten by me.It is not copied from any relied resource.
+------------------Thank you-------------------------
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

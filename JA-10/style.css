@@ -1,0 +1,52 @@
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    
+}
+
+
+#form_container{
+    border:2px solid green;
+    width:300px;
+  margin-top:100px;
+  margin-left:500px;
+  padding:10px;
+  line-height:40px;
+  background-color: blueviolet;
+
+}
+
+h2{
+    color:white;
+    background-color: rgb(92, 172, 241);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding-left:80px;
+}
+
+#user-input,#gmail-input,#password-input,#confirm-password-input,#phone_number{
+    width: 100%;
+    border:2px solid goldenrod;
+    border-radius:20px ;
+}
+#register-btn{
+    background-color: burlywood;
+    border: 2px solid black;
+    width:50%;
+    margin-left:70px;
+    height:20px;
+    border-radius: 20px;
+}
+#register-btn:hover{
+background-color: gold;
+border: 2px solid black;
+border-radius: 20px;
+}
+<<<<<<< HEAD
+=======
+
+>>>>>>> bd6092f (Daily assignments)
+#user-label,#gmail-label,#password-label,#phone-label{
+    color:white;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
